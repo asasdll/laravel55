@@ -1,0 +1,8 @@
+[2020-02-26 19:38:41] local.ERROR: Header may not contain more than a single header, new line detected {"exception":"[object] (ErrorException(code: 0): Header may not contain more than a single header, new line detected at C:\\xampp\\htdocs\\project\\laravel\\vendor\\symfony\\http-foundation\\Response.php:341)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Header may not ...', 'C:\\\\xampp\\\\htdocs...', 341, Array)
+#1 C:\\xampp\\htdocs\\project\\laravel\\vendor\\symfony\\http-foundation\\Response.php(341): header('Location: http:...', false, 302)
+#2 C:\\xampp\\htdocs\\project\\laravel\\vendor\\symfony\\http-foundation\\Response.php(375): Symfony\\Component\\HttpFoundation\\Response->sendHeaders()
+#3 C:\\xampp\\htdocs\\project\\laravel\\public\\index.php(58): Symfony\\Component\\HttpFoundation\\Response->send()
+#4 {main}
+"} 
