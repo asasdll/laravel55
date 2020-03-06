@@ -1,0 +1,137 @@
+@extends('layouts.app1')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                  <a class="card-header" href="{{ "" }}">
+                  <h3>register_member</h3>
+                  </a>
+                <div class="card-body">
+                    <form method="POST" action="{{ ('member') }}" enctype="multipart/form-data">
+                        @csrf
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">ชื่อ</label>
+                              <input id="name" type="text" class="form-control is-invalid @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                              @error('name')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputPassword4">นามสกุล</label>
+                              <input id="name" type="text" class="form-control is-invalid @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                              @error('lastname')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">ชื่อเล่น</label>
+                              <input id="name" type="text" class="form-control" name="nickname" value="{{ old('nickname') }}" >
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputPassword4">อายุ</label>
+                              <input id="name" type="text" class="form-control " name="age" value="{{ old('age') }}">
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">ว/ด/ป</label>
+                              <input type="text" class="form-control" id="date" name="date">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputPassword4">เบอร์ติดต่อ</label>
+                              <input id="name" type="text" class="form-control is-invalid @error('contactnumber') is-invalid @enderror" name="contactnumber" value="{{ old('contactnumber') }}" required autocomplete="contactnumber" autofocus>
+                              @error('contactnumber')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-8">
+                              <label for="inputEmail4">เบอร์ติดต่อฉุกเฉิน 1</label>
+                              <input id="name" type="text" class="form-control is-invalid @error('emergencycontactnumber1') is-invalid @enderror" name="emergencycontactnumber1" value="{{ old('emergencycontactnumber1') }}" required autocomplete="emergencycontactnumber1" autofocus>
+                              @error('emergencycontactnumber1')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputPassword4">ชื่อเบอร์ฉุกเฉิน</label>
+                              <input id="name" type="text" class="form-control is-invalid" name="emergencynumber" value="{{ old('emergencynumber') }}">
+                              @error('emergencynumber')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-8">
+                              <label for="inputEmail4">เบอร์ติดต่อฉุกเฉิน 2</label>
+                              <input id="name" type="text" class="form-control " name="emergencycontactnumber2" value="{{ old('emergencycontactnumber2') }}" >
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputPassword4">ชื่อเบอร์ฉุกเฉิน</label>
+                              <input id="name" type="text" class="form-control " name="emergencynumber2" value="{{ old('emergencynumber2') }}">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputAddress">ที่อยู่ตามทะเบียนบ้าน</label>
+                            <input id="name" type="text" class="form-control" name="addresshome" value="{{ old('addresshome') }}">
+                          </div>
+                          <div class="form-group">
+                            <label for="inputAddress2">ที่อยู่ปัจจุบัน</label>
+                            <input id="name" type="text" class="form-control @error('currentaddress') is-invalid @enderror" name="currentaddress" value="{{ old('currentaddress') }}">
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputCity">จังหวัด</label>
+                              <input id="name" type="text" class="form-control " name="city" value="{{ old('city') }}" >
+                            </div>
+                            <div class="form-group col-md-4 " >
+                              <label for="inputState">สถานะ</label>
+                              <select id="inputState" class="form-control" name="status2">
+                                <option selected>เลือก</option>
+                                <option value="โสด">โสด</option>
+                                <option value="เเต่งาน">เเต่งาน</option>
+                                <option value="หย่าร้าง">หย่าร้าง</option>
+                                <option value="เเยกกันอยู่">เเยกกันอยู่</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label for="inputZip">รหัสไปรษณีย์</label>
+                              <input id="name" type="text" class="form-control" name="postalcode" value="{{ old('postalcode') }}" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlFile1">Uplode image</label>
+                            <input type="file" class="form-control-file" id="img"  name="img">
+                          </div>
+
+                          <br>
+                          <br>
+                        <div class="form-group">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit"  class="btn btn-primary">
+                                    {{ __('สมัคร') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

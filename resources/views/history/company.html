@@ -1,0 +1,62 @@
+@extends('layouts.app1')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                  <a class="New Company" href="{{ "" }}">
+                  <h3>New Company</h3>
+                  </a>
+                <div class="card-body">
+                    <form method="POST" action="{{ ('newcompany') }}"  enctype="multipart/form-data">
+                        @csrf
+                          <div class="form">
+                            <div class="form-group">
+                              <label for="inputEmail4">ชื่อบริษัท</label>
+                              <input id="name" type="text" class="form-control is-invalid @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                              @error('name')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPassword4">เบอร์ติดต่อ</label>
+                              <input id="name" type="text" class="form-control is-invalid @error('tle') is-invalid @enderror" name="tle" value="{{ old('tle') }}" required autocomplete="tle" autofocus>
+                              @error('tle')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPassword4">ที่อยู่</label>
+                              <input id="name" type="text" class="form-control is-invalid @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+                              @error('address')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message}}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlFile1">Uplode image</label>
+                              <input type="file" class="form-control-file" id="image"  name="image">
+                            </div>
+                          </div>
+                          <br>
+                          <br>
+                        <div class="form-group">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('สมัคร') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
