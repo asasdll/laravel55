@@ -73,13 +73,13 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="leavech">
+                        <a class="nav-link" href="leave3">
                             <i class="nc-icon nc-bell-55"></i>
-                            <p>การอนุมัติลา</p>
+                            <p>ผลการอนุมัติลา</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="canvassch">
+                        <a class="nav-link" href="leave2">
                             <i class="nc-icon nc-align-left-2"></i>
                             <p>การขออนุมัติลา</p>
                         </a>
@@ -186,13 +186,13 @@
                                             <div class="col-md-4 px-1">
                                                 <div class="form-group">
                                                     <label>ชื่อ</label>
-                                                    <input type="text" class="form-control"  value="{{$ticket->firstname}}">
+                                                    <input type="text" class="form-control"  value="{{$ticket->firstnamebem}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 px-1">
                                                 <div class="form-group">
                                                     <label>นามสกุล</label>
-                                                    <input type="text" class="form-control" value="{{$ticket->lastname}}">
+                                                    <input type="text" class="form-control" value="{{$ticket->lastnamebem}}">
                                                 </div>
                                             </div>
                                         </div>

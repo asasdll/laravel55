@@ -13,8 +13,14 @@ class CreatePositionTable extends Migration
      */
     public function up()
     {
-        Schema::create('position', function (Blueprint $table) {
+        Schema::create('positions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('codecom');
+            $table->string('idchief');
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('niname')->nullable();
+            $table->string('position');
             $table->timestamps();
         });
     }

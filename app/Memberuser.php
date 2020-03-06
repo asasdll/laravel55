@@ -9,7 +9,7 @@ use Auth;
 class Memberuser extends Model
 {
   protected $fillable = [
-      'idname','code','firstname', 'lastname','nickname','age','date','tel',
+      'idname','code','firstnamebem', 'lastnamebem','nickname','age','date','tel',
       'tel2','telname2','tel3','telname3','address','city','postalcode',
       'status2','image'
   ];

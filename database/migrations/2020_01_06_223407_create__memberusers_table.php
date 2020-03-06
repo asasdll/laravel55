@@ -17,16 +17,16 @@ class CreateMemberusersTable extends Migration
             $table->bigIncrements('id');
             $table->string('iduser');
             $table->string('code')->nullable();
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('firstnamebem');
+            $table->string('lastnamebem');
             $table->string('nickname')->nullable();
             $table->string('age')->nullable();
             $table->string('date')->nullable();
             $table->string('tel')->nullable();
             $table->string('tel2')->nullable();
             $table->string('telname2')->nullable();
-            $table->string('tel3');
-            $table->string('telname3')->nullable()
+            $table->string('tel3')->nullable();
+            $table->string('telname3')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('status2')->nullable();

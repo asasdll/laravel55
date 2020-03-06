@@ -45,7 +45,7 @@ class AddmacaddressController extends Controller
     {
       $this->validate($request, [
         'addmac'=> ['required', 'string', 'max:255'],
-        //'image'=> 'image|mimes:jpeg,png,jpg|max:2048'
+          'name'=> ['required', 'string', 'max:255'],
      ]);
 
 //'idname', 'companyname','firstname','lastname','tle','tle2','address','city','postalcode','image','hashedRandomPassword'

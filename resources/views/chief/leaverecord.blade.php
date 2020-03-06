@@ -73,13 +73,13 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="leavech">
+                        <a class="nav-link" href="leave3">
                             <i class="nc-icon nc-bell-55"></i>
-                            <p>การอนุมัติลา</p>
+                            <p>ผลการอนุมัติลา</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="canvassch">
+                        <a class="nav-link" href="leave3">
                             <i class="nc-icon nc-align-left-2"></i>
                             <p>การขออนุมัติลา</p>
                         </a>

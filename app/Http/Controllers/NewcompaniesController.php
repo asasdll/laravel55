@@ -28,18 +28,45 @@ class NewcompaniesController extends Controller
 
     public function table()
     {
-    /*  $hrbumble = Newcompanies::find(Auth::user()->id);
-      $date = array('hrbumble' => $hrbumble);
-     //dd("aaaaaa");*/
-      return view('hr.table');
+
+      $user_aaa = DB::table('users')
+            ->join('newcompanies', 'users.id', '=','newcompanies.idname')
+            ->join('memberusers', 'newcompanies.newcode', '=','memberusers.code')
+            ->join('times', 'memberusers.iduser', '=','times.user_id')
+             ->where('idname',Auth::user()->id)
+            
+             ->get();
+
+
+             //-----------คำนวลความต่างกันข้องเวลา---------------//
+
+            /* function diff2time($created_at,$updated_at){
+                $now_time1=strtotime(date("Y-m-d ".$created_at));
+                $now_time2=strtotime(date("Y-m-d ".$updated_at));
+                dd($created_at);
+                $time_diff=abs($now_time2-$now_time1);
+                $time_diff_h=floor($time_diff/3600); // จำนวนชั่วโมงที่ต่างกัน
+                $time_diff_m=floor(($time_diff%3600)/60); // จำวนวนนาทีที่ต่างกัน
+                $time_diff_s=($time_diff%3600)%60; // จำนวนวินาทีที่ต่างกัน
+                return $time_diff_h." ชั่วโมง ".$time_diff_m." นาที ".$time_diff_s." วินาที";
+
+                dd($time_diff_s);
+
+              }*/
+
+
+      return view('hr.table' ,['user_aaa' => $user_aaa ]);
     }
 
     public function status()
     {
-    /*  $hrbumble = Newcompanies::find(Auth::user()->id);
-      $date = array('hrbumble' => $hrbumble);
-     //dd("aaaaaa");*/
-      return view('hr.status');
+      $status = DB::table('users')
+      ->join('newcompanies', 'users.id', '=','newcompanies.idname')
+      //->join('memberusers', 'newcompanies.newcode', '=','memberusers.code')
+      //->where('idname', '=' ,Auth::user()->id)
+      ->get();
+      dd($status);
+        return view('hr.status', ['status' => $status]);
     }
 
     public function leave()
@@ -149,7 +176,7 @@ class NewcompaniesController extends Controller
      */
     public function edit(Newcompanies $newcompanies,$id)
     {
-//dd('asdasd');
+///dd('asdasd');
       $ticket = Newcompanies::find($id);
     //  dd($ticket);
            return view('hr.edithrfrom', compact('ticket','id'));

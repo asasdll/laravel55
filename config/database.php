@@ -45,12 +45,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'root'),
-            'username' => env('DB_USERNAME', 'project'),
-            'password' => env('DB_PASSWORD', ''),
+            'url' => env('leaveth.com'),
+            'host' => env('DB_HOST', '103.86.51.69'),
+            'port' => env('DB_PORT', '21'),
+            'database' => env('DB_DATABASE', 'leavethc_project'),
+            'username' => env('DB_USERNAME', 'leavethc_leavethc'),
+            'password' => env('DB_PASSWORD', 'Hm)7UQjf9.r18Z'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

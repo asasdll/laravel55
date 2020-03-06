@@ -48,15 +48,15 @@
                     </a>
                 </div>
                 <ul class="nav">
+                  <li class="nav-item ">
+                      <a class="nav-link" href="hr">
+                          <i class="nc-icon nc-circle-09"></i>
+                          <p>NewCompany</p>
+                      </a>
+                  </li>
                     <li>
                         <a class="nav-link" href="hr">
-                            <i class="nc-icon nc-chart-pie-35"></i>
-                            <p>NewCompany</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="hr">
-                            <i class="nc-icon nc-circle-09"></i>
+                            <i class="nc-icon nc-badge"></i>
                             <p>Profile</p>
                         </a>
                     </li>
@@ -67,6 +67,11 @@
                         </a>
                     </li>
                     <li>
+                        <a class="nav-link" href="pos">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>ตำเเหน่ง</p>
+                        </a>
+                    </li>
                       <li>
                           <a class="nav-link" href="usersprofile">
                               <i class="nc-icon nc-single-02"></i>
@@ -91,13 +96,13 @@
                             <p>Mac Address</p>
                         </a>
                     </li>
-                    <li>
+                    <li >
                       <a class="nav-link active" href="status">
                           <i class="nc-icon nc-refresh-02"></i>
                           <p>เปลี่ยนสถานะ</p>
                       </a>
                   </li>
-                    <li class="nav-item active active-pro">
+                    <li class="nav-item active">
                         <a class="nav-link active" href="upgrade.html">
                             <i class="nc-icon nc-alien-33"></i>
                             <p>Upgrade to PRO</p>
@@ -110,7 +115,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#pablo">Time List</a>
+                    <a class="navbar-brand" href="#pablo">ประวัติการบันทึกเวลา </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -180,125 +185,30 @@
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Striped Table with Hover</h4>
-                                    <p class="card-category">Here is a subtitle for this table</p>
+                                    <h4 class="card-title">ประวติการบันทึกเวลา</h4>
+                                    <p class="card-category">ประวติการบันทึกเวลา</p>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
                                             <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Salary</th>
-                                            <th>Country</th>
-                                            <th>City</th>
+                                            <th>ชื่อ</th>
+                                            <th>นามสกุล</th>
+                                            <th>เข้างาน</th>
+                                            <th>ออกงาน</th>
+                                            <th>เวลารวม</th>
                                         </thead>
+                                          @foreach($user_aaa as $ticket)
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Dakota Rice</td>
-                                                <td>$36,738</td>
-                                                <td>Niger</td>
-                                                <td>Oud-Turnhout</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Minerva Hooper</td>
-                                                <td>$23,789</td>
-                                                <td>Curaçao</td>
-                                                <td>Sinaai-Waas</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sage Rodriguez</td>
-                                                <td>$56,142</td>
-                                                <td>Netherlands</td>
-                                                <td>Baileux</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Philip Chaney</td>
-                                                <td>$38,735</td>
-                                                <td>Korea, South</td>
-                                                <td>Overland Park</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Doris Greene</td>
-                                                <td>$63,542</td>
-                                                <td>Malawi</td>
-                                                <td>Feldkirchen in Kärnten</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Mason Porter</td>
-                                                <td>$78,615</td>
-                                                <td>Chile</td>
-                                                <td>Gloucester</td>
+                                                <td>{{$ticket->id}}</td>
+                                                <td>{{$ticket->firstname}}</td>
+                                                <td>{{$ticket->lastname}}</td>
+                                                <td>{{$ticket->created_at}}</td>
+                                                <td>{{$ticket->updated_at}}</td>
                                             </tr>
                                         </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="card card-plain table-plain-bg">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Table on Plain Background</h4>
-                                    <p class="card-category">Here is a subtitle for this table</p>
-                                </div>
-                                <div class="card-body table-full-width table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Salary</th>
-                                            <th>Country</th>
-                                            <th>City</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Dakota Rice</td>
-                                                <td>$36,738</td>
-                                                <td>Niger</td>
-                                                <td>Oud-Turnhout</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Minerva Hooper</td>
-                                                <td>$23,789</td>
-                                                <td>Curaçao</td>
-                                                <td>Sinaai-Waas</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sage Rodriguez</td>
-                                                <td>$56,142</td>
-                                                <td>Netherlands</td>
-                                                <td>Baileux</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Philip Chaney</td>
-                                                <td>$38,735</td>
-                                                <td>Korea, South</td>
-                                                <td>Overland Park</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Doris Greene</td>
-                                                <td>$63,542</td>
-                                                <td>Malawi</td>
-                                                <td>Feldkirchen in Kärnten</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Mason Porter</td>
-                                                <td>$78,615</td>
-                                                <td>Chile</td>
-                                                <td>Gloucester</td>
-                                            </tr>
-                                        </tbody>
+                                        @endforeach
                                     </table>
                                 </div>
                             </div>
@@ -433,7 +343,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!--  Chartist Plugin  -->
 <script src="assets2/js/plugins/chartist.min.js"></script>
-<!--  Notificatons Plugin    -->
+<!--  Notifications Plugin    -->
 <script src="assets2/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="assets2/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>

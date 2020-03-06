@@ -12,10 +12,12 @@
 =========================================================
 
  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets2/img/favicon.ico">
@@ -31,11 +33,48 @@
     <link href="assets2/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets2/css/demo.css" rel="stylesheet" />
+    
 </head>
 
 <body>
+            <style>
+            #circle { 
+
+                width: 100px; /* ความกว้าง */
+
+                height: 100px; /* ความสูง */
+
+                background: btn btn-primary; /* สี */
+
+                -moz-border-radius: 70px; 
+
+                -webkit-border-radius: 70px; 
+
+                border-radius: 70px;
+
+                }
+            </style>
+
+                <div class="page-preloader">
+
+                <div class="spinner">
+
+                    <div class="rect1"></div>
+
+                    <div class="rect2"></div>
+
+                    <div class="rect3"></div>
+
+                    <div class="rect4"></div>
+
+                    <div class="rect5"></div>
+
+                </div>
+
+                </div>
+
     <div class="wrapper">
-        <div class="sidebar" data-image="assets2/img/sidebar-2.jpg">
+        <div class="sidebar" data-image="assets2/img/sidebar-4.jpg">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -49,49 +88,31 @@
                 </div>
                 <ul class="nav">
                   <li class="nav-item ">
-                      <a class="nav-link" href="chief">
+                      <a class="nav-link" href="{{url('VH')}}">
                           <i class="nc-icon nc-circle-09"></i>
                           <p>NewCompany</p>
                       </a>
                   </li>
                     <li>
-                        <a class="nav-link" href="chief">
+                        <a class="nav-link" href="{{url('VH')}}">
                             <i class="nc-icon nc-badge"></i>
                             <p>Profile</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="tablech">
+                        <a class="nav-link" href="{{url('tablech')}}">
                             <i class="nc-icon nc-notes"></i>
                             <p>Time List</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="usersprofilech">
-                            <i class="nc-icon nc-single-02"></i>
-                            <p>พนักงาน</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="leavech">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>การอนุมัติลา</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="canvassch">
+                        <a class="nav-link" href="{{url('leave2')}}">
                             <i class="nc-icon nc-align-left-2"></i>
                             <p>การขออนุมัติลา</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="recordch">
-                            <i class="nc-icon nc-paper-2"></i>
-                            <p>ประวัติการลา</p>
-                        </a>
-                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="timestampch">
+                        <a class="nav-link" href="{{url('timestampch')}}">
                             <i class="nc-icon nc-tap-01"></i>
                             <p>บันทึกเวลา</p>
                         </a>
@@ -117,26 +138,18 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-palette"></i>
-                                    <span class="d-lg-none">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-planet"></i>
-                                    <span class="notification">5</span>
-                                    <span class="d-lg-none">Notification</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Notification 1</a>
-                                    <a class="dropdown-item" href="#">Notification 2</a>
-                                    <a class="dropdown-item" href="#">Notification 3</a>
-                                    <a class="dropdown-item" href="#">Notification 4</a>
-                                    <a class="dropdown-item" href="#">Another notification</a>
-                                </ul>
-                            </li>
+                          <li class="nav-item">
+                              <a href="#" class="nav-link">
+                                  <i class="nc-icon nc-chart-pie-36"></i>
+                                  <span class="d-lg-block">&nbsp;Search</span>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="#" class="nav-link">
+                                  <i class="nc-icon nc-circle"></i>
+                                  <span class="d-lg-block">&nbsp;Search</span>
+                              </a>
+                          </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nc-icon nc-zoom-split"></i>
@@ -145,24 +158,6 @@
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <span class="no-icon">Account</span>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="no-icon">Dropdown</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </li>
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -193,18 +188,18 @@
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">บันทึกเวลาทำงาน</h4>
+                                    <h4 align = 'center' class="card-title">บันทึกเวลาทำงาน</h4>
                                     <p class="card-category">
                                        <div class="panel-body">
                                         @if(\Session::has('successv'))
-                                        <div class="alert alert-danger">
+                                        <div align = 'center' class="alert alert-danger">
                                           <p>{{\Session::get('successv')}}</p>
                                         </div>
                                         @endif
                                     </div>
                                     <div class="panel-body">
                                      @if(\Session::has('success'))
-                                     <div class="alert alert-success">
+                                     <div align = 'center' class="alert alert-success">
                                        <p>{{\Session::get('success')}}</p>
                                      </div>
                                      @endif
@@ -221,7 +216,7 @@
                                 <div class="card-body table-full-width table-responsive">
                                   <form method="post" action="{{'down'}}" >
                                     @csrf
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <h3 align = 'center'><button id="circle" type="submit" class="btn btn-success" >Submit</button></h3>
                                   </form>
                                 </div>
                             </div>

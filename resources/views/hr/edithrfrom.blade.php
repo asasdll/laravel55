@@ -67,6 +67,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="nav-link" href="{{url('pos')}}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>ตำเเหน่ง</p>
+                        </a>
+                    </li>
+                    <li>
                         <a class="nav-link" href="usersprofile">
                             <i class="nc-icon nc-single-02"></i>
                             <p>พนักงาน</p>
@@ -96,7 +102,7 @@
                             <p>เปลี่ยนสถานะ</p>
                         </a>
                     </li>
-                    <li class="nav-item active active-pro">
+                    <li class="nav-item active">
                         <a class="nav-link active" href="#">
                             <i class="nc-icon nc-alien-33"></i>
                             <p>Upgrade to PRO</p>
@@ -157,7 +163,7 @@
                                     <h4 class="card-title">Edit Profile</h4>
                                 </div>
                                 <div class="card-body">
-                                  <form id="form1" name="form1"  action="" method="POST" action="{{action('NewcompaniesController@update', $id)}}"  enctype="multipart/form-data">
+                                  <form   method="POST" action="{{action('NewcompaniesController@update', $id)}}"  enctype="multipart/form-data">
                                       @csrf
                                         <div class="form">
                                           <div class="row">

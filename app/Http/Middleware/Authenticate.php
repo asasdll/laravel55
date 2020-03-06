@@ -15,11 +15,11 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-      if ( Auth::check() && Auth::user()->isAdmin() )
+      if ( Auth::check() && Auth::user()->isAdmin())
     {
         return $next($request);
     }
 
-    return redirect('http://');//หากไม่ใช่ Admin ให้ Redirect ไปที่ URL นี้
+    return redirect('/');//หากไม่ใช่ Admin ให้ Redirect ไปที่ URL นี้
        }
     }

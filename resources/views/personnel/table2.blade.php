@@ -35,7 +35,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-image="assets2/img/sidebar-5.jpg">
+        <div class="sidebar" data-image="assets2/img/sidebar-4.jpg">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -48,50 +48,44 @@
                     </a>
                 </div>
                 <ul class="nav">
+                  <li class="nav-item ">
+                      <a class="nav-link" href="VH">
+                          <i class="nc-icon nc-circle-09"></i>
+                          <p>NewCompany</p>
+                      </a>
+                  </li>
                     <li>
-                        <a class="nav-link" href="hr">
-                            <i class="nc-icon nc-chart-pie-35"></i>
-                            <p>NewCompany</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="hr">
-                            <i class="nc-icon nc-circle-09"></i>
+                        <a class="nav-link" href="VH">
+                            <i class="nc-icon nc-badge"></i>
                             <p>Profile</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="table">
+                    <li  class="nav-item active">
+                        <a class="nav-link" href="tablepe">
                             <i class="nc-icon nc-notes"></i>
                             <p>Time List</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="usersprofile">
-                            <i class="nc-icon nc-single-02"></i>
-                            <p>พนักงาน</p>
+                        <a class="nav-link" href="leave3">
+                            <i class="nc-icon nc-bell-55"></i>
+                            <p>ผลการอนุมัติลา</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="leave">
-                            <i class="nc-icon nc-bell-55"></i>
+                        <a class="nav-link" href="leave2">
+                            <i class="nc-icon nc-align-left-2"></i>
                             <p>การขออนุมัติลา</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="record">
-                            <i class="nc-icon nc-paper-2"></i>
-                            <p>ประวัติกาลา</p>
+                        <a class="nav-link" href="timestampch">
+                            <i class="nc-icon nc-tap-01"></i>
+                            <p>บันทึกเวลา</p>
                         </a>
                     </li>
-                    <li >
-                      <a class="nav-link" href="status">
-                          <i class="nc-icon nc-refresh-02"></i>
-                          <p>เปลี่ยนสถานะ</p>
-                      </a>
-                  </li>
                     <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="upgrade.html">
+                        <a class="nav-link active" href="#">
                             <i class="nc-icon nc-alien-33"></i>
                             <p>Upgrade to PRO</p>
                         </a>
@@ -103,7 +97,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#pablo">พนักงาน</a>
+                    <a class="navbar-brand" href="#pablo">ประวัติการลงเวลาพนักงาน</a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -186,48 +180,7 @@
                                             <th>City</th>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Dakota Rice</td>
-                                                <td>$36,738</td>
-                                                <td>Niger</td>
-                                                <td>Oud-Turnhout</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Minerva Hooper</td>
-                                                <td>$23,789</td>
-                                                <td>Curaçao</td>
-                                                <td>Sinaai-Waas</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sage Rodriguez</td>
-                                                <td>$56,142</td>
-                                                <td>Netherlands</td>
-                                                <td>Baileux</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Philip Chaney</td>
-                                                <td>$38,735</td>
-                                                <td>Korea, South</td>
-                                                <td>Overland Park</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Doris Greene</td>
-                                                <td>$63,542</td>
-                                                <td>Malawi</td>
-                                                <td>Feldkirchen in Kärnten</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Mason Porter</td>
-                                                <td>$78,615</td>
-                                                <td>Chile</td>
-                                                <td>Gloucester</td>
-                                            </tr>
+        
                                         </tbody>
                                     </table>
                                 </div>
@@ -337,84 +290,7 @@
         </div>
     </div>
     <!--   -->
-    <!-- <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
 
-        <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Background Image</p>
-                    <label class="switch">
-                        <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"><span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <p>Filters</p>
-                    <div class="pull-right">
-                        <span class="badge filter badge-black" data-color="black"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-orange" data-color="orange"></span>
-                        <span class="badge filter badge-red" data-color="red"></span>
-                        <span class="badge filter badge-purple active" data-color="purple"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Sidebar Images</li>
-
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-1.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-3.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="..//assets/img/sidebar-4.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-5.jpg" alt="" />
-                </a>
-            </li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-                </div>
-            </li>
-
-            <li class="header-title pro-title text-center">Want more components?</li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
-                </div>
-            </li>
-
-            <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-
-            <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
-                <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
-            </li>
-        </ul>
-    </div>
-</div>
- -->
 </body>
 <!--   Core JS Files   -->
 <script src="assets2/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -426,7 +302,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!--  Chartist Plugin  -->
 <script src="assets2/js/plugins/chartist.min.js"></script>
-<!--  Notifications Plugin    -->
+<!--  Notificatons Plugin    -->
 <script src="assets2/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="assets2/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>

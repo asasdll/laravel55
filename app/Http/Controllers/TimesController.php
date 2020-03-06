@@ -73,6 +73,8 @@ class TimesController extends Controller
             //dd($regt);
                     $regy = Times::first()
                     ->orderBy('id', 'DESC')
+                    ->where('user_id', '=' ,Auth::user()->id)
+                    ->whereNull('time_out')
                     ->first();
                     $regy->time_out = 'out';
 
@@ -91,9 +93,9 @@ class TimesController extends Controller
                   return redirect('timestampch')->with('success','บันทึกเวลาเข้าเรียบร้อย');
             }
 
-      } else {
-          return redirect('timestampch')->with('successh','คุณยังไม่ได้ต่อ  WIFI');
-      }
+                    } else {
+                        return redirect('timestampch')->with('successh','คุณยังไม่ได้ต่อ  WIFI');
+                    }
 
 
 

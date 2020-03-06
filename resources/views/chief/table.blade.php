@@ -73,13 +73,13 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="leavech">
+                        <a class="nav-link" href="leave3">
                             <i class="nc-icon nc-bell-55"></i>
-                            <p>การอนุมัติลา</p>
+                            <p>ผลการอนุมัติลา</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="canvassch">
+                        <a class="nav-link" href="leave2">
                             <i class="nc-icon nc-align-left-2"></i>
                             <p>การขออนุมัติลา</p>
                         </a>
@@ -109,7 +109,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#pablo">ประวัติการลงเวลา</a>
+                    <a class="navbar-brand" href="#pablo">ประวัติการลงเวลาหัวหน้า</a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>

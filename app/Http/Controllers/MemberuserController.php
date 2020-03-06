@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Memberuser;
 use App\Newcompanies;
+use App\User;
+use App\Leave;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use DB;
@@ -15,46 +17,156 @@ class MemberuserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+         ///------------------chief-------------------------///
     public function index()
     {
-  //  dd('ตรวจสอบ');
-      //return view('chief.chieffrom');
+      $user = request()->User();
+      if ($user && $user->status == 'chief') {
+        //dd('aaa');
+            $users = Memberuser::orderBy('iduser')->where('iduser', '=' ,Auth::user()->id)->get();
 
+            return view('chief',['users' => $users]);
+      }else {
+        //dd('royd');
+
+          $userspe = Memberuser::orderBy('iduser')->where('iduser', '=' ,Auth::user()->id)->get();
+
+        return view('personnel',['userspe' => $userspe]);
+          }
     }
 
-    public function test()
+    public function table()
     {
-        return view('test');
+      $user = request()->User();
+      if ($user && $user->status == 'chief') {
+        return view('chief.table');
+      }else {
+        
+        return view('personnel.table2');
+      }
     }
 
 
-    public function leave()
+    public function tablepe()
     {
-        return view('.chief.leave');
+        
+    
+ 
+         return view('personnel.table2');
+    }
+
+
+    public function leave2()
+    {
+      //dd('asda');
+
+      $boss = DB::table('users')  //หัวหน้า
+      ->join('newcompanies', 'users.id', '=','newcompanies.idname')
+      ->join('memberusers', 'newcompanies.newcode', '=','memberusers.code')
+      ->join('positions', 'memberusers.code', '=','positions.codecom')
+      ->where('iduser', '=' ,Auth::user()->id)
+      ->get();
+
+      $position = DB::table('users')  //ตำเเหน่ง
+      ->join('newcompanies', 'users.id', '=','newcompanies.idname')
+      ->join('memberusers', 'newcompanies.newcode', '=','memberusers.code')
+      ->join('positions', 'memberusers.code', '=','positions.codecom')
+      ->where('iduser', '=' ,Auth::user()->id)
+      ->get();
+  
+
+      //dd($position);
+
+        $status = DB::table('users')  ///ชื่อ นามสกุลผุ้ใช้
+       ->join('memberusers', 'users.id', '=','memberusers.iduser')
+       ->where('iduser', '=' ,Auth::user()->id)
+        ->get();
+
+        $leave = DB::table('leaves_tops')///ประเภทการลา
+        ->get();
+
+
+      //dd($boss);
+
+        return view('personnel.leave2' , ['status'=> $status ,'boss'=> $boss , 'leave'=> $leave , 'position'=> $position]);
+    }
+
+
+    public function leave3()
+    {
+      $user = request()->User();
+      if ($user && $user->status == 'chief') {
+        
+        $leave = DB::table('positions') //กำลังรออนุมัติ  ของหัวหน้า
+        //->join('memberusers', 'positions.idchief', '=','memberusers.iduser')
+        ->join('leaves', 'positions.idchief', '=','leaves.head')
+        ->whereNull('status_chief')
+        //->orderBy('idchief','DESC')
+        ->where('head',Auth::user()->id)
+        ->get();
+
+        //dd($leave);
+
+        return view('chief.leave' , ['leave'=> $leave]);
+      }else {
+
+        
+        $leave = DB::table('users') //กำลังรออนุมัติ ส่วนของพนักงาน
+        ->join('memberusers', 'users.id', '=','memberusers.iduser')
+        ->join('positions', 'memberusers.code', '=','positions.codecom')
+        ->join('leaves', 'positions.idchief', '=','leaves.head')
+        ->whereNull('status_hr')
+        //->orderBy('idmember','DESC')
+        ->where('iduser',Auth::user()->id)
+        ->get();
+
+
+        $leave2 = DB::table('users') /// อนุมัติเเล้ว ส่วนของพนักงาน
+        ->join('memberusers', 'users.id', '=','memberusers.iduser')
+        ->join('positions', 'memberusers.code', '=','positions.codecom')
+        ->join('leaves', 'positions.idchief', '=','leaves.head')
+        //->orderBy('idmember','DESC')
+        ->where('status_hr','=' ,'1')
+        ->where('idmember',Auth::user()->id)
+        
+        ->Paginate(25);
+
+
+         $leave3 = DB::table('users') // ไม่อนุมัติ ส่วนของพนักงาน
+         ->join('memberusers', 'users.id', '=','memberusers.iduser')
+         ->join('positions', 'memberusers.code', '=','positions.codecom')
+         ->join('leaves', 'positions.idchief', '=','leaves.head')
+         ->orderBy('idmember','DESC')
+         ->where('status_chief','=' ,'2')
+         ->where('idmember',Auth::user()->id)
+        
+         ->Paginate(25);
+         
+        //dd($leave);
+         
+ 
+         return view('personnel.leave3',   ['leave'=> $leave , 'leave2'=> $leave2, 'leave3'=> $leave3]);
+        
+      }
+         
     }
 
 
     public function record()
     {
-        return view('.chief.leaverecord');
+   
+        return view('chief.leaverecord');
+  
     }
 
 
-    public function table()
-    {
-          return view('.chief.table');
-    }
 
 
     public function usersprofile()
     {
           return view('.chief.usersprofile');
     }
-
-    public function canvass()
-    {
-          return view('.chief.canvass');
-    }
+    ///------------------personnel-------------------------///
 
 
     /**
@@ -64,7 +176,7 @@ class MemberuserController extends Controller
      */
     public function create()
     {
-        //
+///
     }
 
     /**
@@ -77,8 +189,8 @@ class MemberuserController extends Controller
     {
               $this->validate($request, [
                 'code'=> ['required', 'string', 'max:255'],
-                'firstname'=> ['required', 'string', 'max:255'],
-                'lastname' => ['required', 'string', 'max:255'],
+                'firstnamebem'=> ['required', 'string', 'max:255'],
+                'lastnamebem' => ['required', 'string', 'max:255'],
                 'tel' => ['required', 'numeric'],
                 'tel2' => ['required', 'numeric'],
                 'telname2' => ['required', 'string', 'max:255'],
@@ -97,8 +209,8 @@ class MemberuserController extends Controller
             $member = new Memberuser;
                 $member->iduser = Auth::user()->id;
                 $member->code = $request->code;
-                $member->firstname = $request->firstname;
-                $member->lastname = $request->lastname;
+                $member->firstnamebem = $request->firstnamebem;
+                $member->lastnamebem = $request->lastnamebem;
                 $member->nickname = $request->nickname;
                 $member->age = $request->age;
                 $member->date = $request->date;
@@ -122,10 +234,20 @@ class MemberuserController extends Controller
       //
       //dd($member);
                $member->save();
-                 return redirect('chief');
-                 dd('sdasd');
+
+             $user = $request->user();
+               if (Auth::check() && $user && $user->status === 'chief') {
+
+                  return redirect('chief');
+               } else {
+
+                  return redirect('personnel');
+               }
+
+                 //return redirect('chief');
+                // dd('sdasd');
           } else {
-              return redirect('chief')->with('successv','กรุณา ตรวจสอบ Code ใหม่ หรือ ติดต่อ HR');;
+              return redirect('chief')->with('successv','กรุณา ตรวจสอบ Code ใหม่ หรือ ติดต่อ HR');
           //  dd('ตรวจสอบcode ใหม่');
         }
 
@@ -141,9 +263,15 @@ class MemberuserController extends Controller
      * @param  \App\Memberuser  $memberuser
      * @return \Illuminate\Http\Response
      */
-    public function show(Memberuser $memberuser)
+    public function show($id)
     {
-        //
+      
+      $reg = Leave::find($id);
+
+  
+      //dd($reg);
+            return view('personnel.leave4', compact('reg','id'));
+     
     }
 
     /**
@@ -154,10 +282,13 @@ class MemberuserController extends Controller
      */
     public function edit(Memberuser $memberuser,$id)
     {
+
       $chief = Memberuser::find($id);
      //dd($chief);
            return view('chief.editchieffrom', compact('chief','id'));
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -170,8 +301,8 @@ class MemberuserController extends Controller
     {
      $this->validate($request, [
         //'code'=> ['required', 'string', 'max:255'],
-        'firstname'=> ['required', 'string', 'max:255'],
-        'lastname' => ['required', 'string', 'max:255'],
+        'firstnamebem'=> ['required', 'string', 'max:255'],
+        'lastnamebem' => ['required', 'string', 'max:255'],
         'tel' => ['required', 'numeric'],
         'tel2' => ['required', 'numeric'],
         'telname2' => ['required', 'string', 'max:255'],
@@ -182,8 +313,8 @@ class MemberuserController extends Controller
        $member =  Memberuser::find($id);
        //dd($member);
           //$member->iduser = Auth::user()->id;
-          $member->firstname = $request->firstname;
-          $member->lastname = $request->lastname;
+          $member->firstnamebem = $request->firstnamebem;
+          $member->lastnamebem = $request->lastnamebem;
           $member->nickname = $request->nickname;
           $member->age = $request->age;
           $member->date = $request->date;
@@ -208,7 +339,15 @@ class MemberuserController extends Controller
 //dd($member);
           $member->save();
 
-                return redirect('chief');
+          $user = $request->user();
+            if (Auth::check() && $user && $user->status == 'chief') {
+
+               return redirect('chief');
+            } else {
+
+               return redirect('personnel');
+            }
+
     }
 
     /**

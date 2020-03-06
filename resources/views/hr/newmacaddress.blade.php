@@ -67,6 +67,11 @@
                         </a>
                     </li>
                     <li>
+                        <a class="nav-link" href="pos">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>ตำเเหน่ง</p>
+                        </a>
+                    </li>
                       <li>
                           <a class="nav-link" href="{{url('usersprofile')}}">
                               <i class="nc-icon nc-single-02"></i>
@@ -97,7 +102,7 @@
                           <p>เปลี่ยนสถานะ</p>
                       </a>
                   </li>
-                    <li class="nav-item active active-pro">
+                    <li class="nav-item active">
                         <a class="nav-link active" href="upgrade.html">
                             <i class="nc-icon nc-alien-33"></i>
                             <p>Upgrade to PRO</p>
@@ -187,7 +192,7 @@
                                                 <div class="col-md-4 pl-1">
                                                     <div class="form-group">
                                                         <label>ชื่อ</label>
-                                                        <input type="text" class="form-control @error('address') is-invalid @enderror" name="name" placeholder="Users Name">
+                                                        <input type="text" class="form-control @error('address') is-invalid @enderror" name="name" placeholder="Users Name" required>
                                                     </div>
                                                 </div>
                                             </div>

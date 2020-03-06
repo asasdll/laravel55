@@ -35,7 +35,10 @@ Route::get('usersprofile', 'NewcompaniesController@usersprofile')->middleware('a
 Route::get('mac', 'AddmacaddressController@mac')->middleware('admin');
 Route::resource('newmac', 'AddmacaddressController')->middleware('admin');
 Route::resource('newcompany', 'NewcompaniesController')->middleware('admin');
-Route::resource('Macaddress', 'NewmacaddressController')->middleware('admin');
+Route::resource('AAA', 'PositionController')->middleware('admin');
+Route::get('pos', 'PositionController@pos')->middleware('admin');
+//Route::get('posup', 'PositionsupsController@uppos')->middleware('admin');
+Route::resource('posup', 'PositionsupsController')->middleware('admin');
 //--------------------------------------------------------//
 
 //-------Route:: chief::-----Logig //
@@ -43,13 +46,16 @@ Route::get('chief', 'HomeController@chief')->middleware('auth');
 //------Route:: chief::Folder------ //
 ///Route::get('chcode', 'MemberuserController@index')->middleware('auth');
 Route::get('tablech', 'MemberuserController@table')->middleware('auth');
-Route::get('leavech', 'MemberuserController@leave')->middleware('auth');
+Route::get('VH', 'MemberuserController@index')->middleware('auth');
+///Route::get('leavech', 'LeaveController@leave')->middleware('auth');
 Route::get('recordch', 'MemberuserController@record')->middleware('auth');
 //Route::get('timestampch', 'MemberuserController@timestamp')->middleware('auth');
 Route::get('usersprofilech', 'MemberuserController@usersprofile')->middleware('auth');
-Route::get('canvassch', 'MemberuserController@canvass')->middleware('auth');
+Route::resource('letter', 'LeaveController')->middleware('auth');
+//Route::POST('canvassch', 'LeaveController@index')->middleware('auth');
 Route::resource('timestampch', 'TimesController')->middleware('auth');
 Route::resource('down', 'TimesController')->middleware('auth');
+Route::POST('editPost','LeaveController@update');
 //--------------------------------------------------------//
 
 //---Route:: chief::Folder---//
@@ -58,7 +64,16 @@ Route::get('personnel', 'HomeController@personnel')->middleware('auth');
 //--------------member-chief-personnel------------------//
 Route::resource('member', 'MemberuserController')->middleware('auth');
 
-/*Route::get('chif', function() {
 
+//--------------member--personnel------------------//
+Route::get('tablepe', 'MemberuserController@tablepe')->middleware('auth');
+Route::get('record2', 'MemberuserController@record2')->middleware('auth');
+Route::get('leave2', 'MemberuserController@leave2')->middleware('auth');
+Route::get('leave3', 'MemberuserController@leave3')->middleware('auth');
+/*Route::get('chif', function() {
+//--------------member--personnel------------------//
+Route::get('tablepe', 'MemberuserController@tablepe')->middleware('auth');
+Route::get('record2', 'MemberuserController@record2')->middleware('auth');
+Route::get('record2', 'MemberuserController@record2')->middleware('auth');
 	 print_r(Auth::user()->email);
 });*/

@@ -16,7 +16,7 @@ class CreateAddmacaddressesTable extends Migration
         Schema::create('addmacaddresses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('idname');
-            $table->string('addmac');
+            $table->macAddress('addmac');
             $table->string('name');
             $table->timestamps();
         });

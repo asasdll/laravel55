@@ -112,10 +112,10 @@
                                     <h4 class="card-title">NEW Profile</h4>
                                 </div>
                                 @if(\Session::has('successy'))
-              <div class="alert alert-danger">
-                <p>{{\Session::get('successy')}}</p>
-              </div>
-              @endif
+                                <div class="alert alert-danger">
+                                    <p>{{\Session::get('successy')}}</p>
+                                </div>
+                                @endif
                                 <div class="card-body">
                                   <form method="POST" action="{{'newcompany'}}"  enctype="multipart/form-data">
                                       @csrf

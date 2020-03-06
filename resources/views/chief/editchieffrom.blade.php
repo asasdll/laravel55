@@ -35,7 +35,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-image="{{ URL::to('/') }}/assets2/img/sidebar-2.jpg">
+        <div class="sidebar" data-image="{{ URL::to('/') }}/assets2/img/sidebar-4.jpg">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -49,13 +49,13 @@
                 </div>
                 <ul class="nav">
                   <li class="nav-item ">
-                      <a class="nav-link" href="{{url('chief')}}">
+                      <a class="nav-link" href="{{url('VH')}}">
                           <i class="nc-icon nc-circle-09"></i>
                           <p>NewCompany</p>
                       </a>
                   </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{url('chief')}}">
+                        <a class="nav-link" href="{{url('VH')}}">
                             <i class="nc-icon nc-badge"></i>
                             <p>Profile</p>
                         </a>
@@ -67,19 +67,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{{url('usersprofilech')}}">
-                            <i class="nc-icon nc-single-02"></i>
-                            <p>พนักงาน</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{url('leavech')}}">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>การอนุมัติลา</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{url('canvassch')}}">
+                        <a class="nav-link" href="{{url('leave2')}}">
                             <i class="nc-icon nc-align-left-2"></i>
                             <p>การขออนุมัติลา</p>
                         </a>
@@ -170,7 +158,7 @@
                                               <div class="col-md-4 pr-1">
                                                   <div class="form-group">
                                                       <label>ชื่อ</label>
-                                                      <input type="text" class="form-control is-invalid @error('firstname') is-invalid @enderror"   name="firstname" value="{{$chief->firstname}}"  required autocomplete="firstname" autofocus>
+                                                      <input type="text" class="form-control is-invalid @error('firstnamebem') is-invalid @enderror"   name="firstnamebem" value="{{$chief->firstnamebem}}"  required autocomplete="firstname" autofocus>
                                                       @error('firstname')
                                                           <span class="invalid-feedback" role="alert">
                                                               <strong>{{ $message}}</strong>
@@ -181,8 +169,8 @@
                                               <div class="col-md-4 pl-1">
                                                   <div class="form-group">
                                                       <label>นามสกุล</label>
-                                                      <input type="text" class="form-control is-invalid @error('lastname') is-invalid @enderror" name="lastname" value="{{$chief->lastname}}" required autocomplete="lastname" autofocus>
-                                                      @error('lastname')
+                                                      <input type="text" class="form-control is-invalid @error('lastnamebem') is-invalid @enderror" name="lastnamebem" value="{{$chief->lastnamebem}}" required autocomplete="lastname" autofocus>
+                                                      @error('lastnamebem')
                                                           <span class="invalid-feedback" role="alert">
                                                               <strong>{{ $message}}</strong>
                                                           </span>
@@ -263,7 +251,7 @@
                                           </div>
                                         <div class="col-md- pr-1">
                                           <div class="form-group">
-                                            <label for="inputPassword4">ที่อยู่</label>
+                                            <label for="inputPassword4">ที่อยู่ตามทะเบียนบ้าน</label>
                                             <input id="name" type="text" class="form-control is-invalid @error('address') is-invalid @enderror" name="address" value="{{$chief->address}}"  required autocomplete="address" autofocus>
                                             @error('address')
                                                 <span class="invalid-feedback" role="alert">

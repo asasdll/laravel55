@@ -56,12 +56,12 @@ class HomeController extends Controller
     public function chief()
     {
         $user = request()->User();
-        if ($user && $user->status == 'chief') {
+        if ($user && $user->status === 'chief') {
 
           $users = Memberuser::orderBy('iduser')->where('iduser', '=' ,Auth::user()->id)->get();
 
          //dd($users);
-             if(Count($users) == 0) {
+             if(Count($users) === 0) {
 
                return view('.chief.chieffrom');
 
@@ -72,7 +72,7 @@ class HomeController extends Controller
              }
           //dd($user);
         }else {
-          return view('/');
+          return redirect('/');
         }
 
         //dd($user);
@@ -91,10 +91,22 @@ class HomeController extends Controller
     {
       $user = request()->User();
       if ($user && $user->status == 'personnel') {
-        return view('personnel');
+
+            $userspe = Memberuser::orderBy('iduser')->where('iduser', '=' ,Auth::user()->id)->get();
+
+            if(Count($userspe) === 0) {
+
+              return view('.chief.chieffrom');
+
+            }else{
+           //
+           // dd($users);
+             return view('personnel',['userspe' => $userspe]);
+            }
+      //  return view('personnel');
 
       }else {
-        return view('/');
+        return redirect('/');
       }
 
     }
