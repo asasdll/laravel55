@@ -26,21 +26,21 @@
 
     <!-- // PLUGINS (css files) // -->
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/bootsnav_files/skins/color.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/bootsnav_files/skins/color.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/bootsnav_files/css/animate.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/bootsnav_files/css/animate.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/bootsnav_files/css/bootsnav.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/bootsnav_files/css/bootsnav.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/bootsnav_files/css/overwrite.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/bootsnav_files/css/overwrite.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/js/plugins/Magnific-Popup-master/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/js/plugins/Magnific-Popup-master/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
 
     <!--// ICONS //-->
 
@@ -52,9 +52,9 @@
 
     <!--// BOOTSTRAP & Main //-->
 
-    <link href="{{ URL::to('/') }}/assets/bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/bootstrap-3.3.7/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="{{ URL::to('/') }}/assets/css/main.css" rel="stylesheet">
+    <link href="{{ URL::to('/') }}/laravel/public/assets/css/main.css" rel="stylesheet">
 
 </head>
 
@@ -116,7 +116,7 @@
 
                 <a class="navbar-brand" href="/">
 
-                    <img src="{{ URL::to('/') }}/assets/img/logo.png" class="logo" alt="logo">
+                    <img src="{{ URL::to('/') }}/laravel/public/assets/img/logo.png" class="logo" alt="logo">
 
                 </a>
 
@@ -586,7 +586,7 @@
 
                 <div class="col-md-6 col-md-push-2">
 
-                    <img src="assets/img/dashboard.png" class="img-responsive" alt="feature">
+                    <img src="laravel/public/assets/img/dashboard.png" class="img-responsive" alt="feature">
 
                 </div>
 
@@ -850,7 +850,7 @@
 
                     <div class="thumbnail team-member">
 
-                        <img src="assets/img/team-2.jpg" class="img-responsive img-circle" alt="team-2">
+                        <img src="laravel/public/assets/img/team-2.jpg" class="img-responsive img-circle" alt="team-2">
 
                         <div class="caption">
 
@@ -890,7 +890,7 @@
 
                     <div class="thumbnail team-member">
 
-                        <img src="assets/img/team-3.jpg" class="img-responsive img-circle" alt="team-3">
+                        <img src="laravel/public/assets/img/team-3.jpg" class="img-responsive img-circle" alt="team-3">
 
                         <div class="caption">
 
@@ -930,7 +930,7 @@
 
                     <div class="thumbnail team-member">
 
-                        <img src="assets/img/team-4.jpg" class="img-responsive img-circle" alt="team-4">
+                        <img src="laravel/public/assets/img/team-4.jpg" class="img-responsive img-circle" alt="team-4">
 
                         <div class="caption">
 
@@ -1185,7 +1185,7 @@
 
                 <div class="footer-caption">
 
-                    <img src="assets/img/logo.png" class="img-responsive center-block" alt="logo">
+                    <img src="laravel/public/assets/img/logo.png" class="img-responsive center-block" alt="logo">
 
                     <hr>
 
@@ -1292,19 +1292,19 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
-    <script src="{{ URL::to('/') }}/assets/bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="{{ URL::to('/') }}/laravel/public/assets/bootstrap-3.3.7/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
-    <script src="{{ URL::to('/') }}/assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="{{ URL::to('/') }}/laravel/public/assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
 
-    <script src="{{ URL::to('/') }}/assets/js/plugins/bootsnav_files/js/bootsnav.js"></script>
+    <script src="{{ URL::to('/') }}/laravel/public/assets/js/plugins/bootsnav_files/js/bootsnav.js"></script>
 
-    <script src="{{ URL::to('/') }}/assets/js/plugins/typed.js-master/typed.js-master/dist/typed.min.js"></script>
+    <script src="{{ URL::to('/') }}/laravel/public/assets/js/plugins/typed.js-master/typed.js-master/dist/typed.min.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js"></script>
 
-    <script src="{{ URL::to('/') }}/assets/js/plugins/Magnific-Popup-master/Magnific-Popup-master/dist/jquery.magnific-popup.js"></script>
+    <script src="{{ URL::to('/') }}/laravel/public/assets/js/plugins/Magnific-Popup-master/Magnific-Popup-master/dist/jquery.magnific-popup.js"></script>
 
-    <script src="{{ URL::to('/') }}/assets/js/main.js"></script>
+    <script src="{{ URL::to('/') }}/laravel/public/assets/js/main.js"></script>
 
 </body>
 
